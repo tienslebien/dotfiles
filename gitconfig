@@ -1,0 +1,67 @@
+[user]
+    name = tienslebien
+    email = etienne@crombez.info
+
+[color]
+    ui = auto
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+    lg = log --stat --max-count=10
+    type = cat-file -t
+    dump = cat-file -p
+    d = difftool
+
+[core]
+    editor = vim
+    pager = most
+    whitespace = -trailing-space
+    excludesfile = ~/.gitignore
+
+[diff]
+    tool = vimdiff
+    mnemonicPrefix = true
+    wordRegex = .
+
+[difftool]
+    prompt = false
+
+[fetch]
+    prune = true
+    recurseSubmodules = on-demand
+
+[grep]
+    extendedRegexp = true
+
+[log]
+    abbrevCommit = true
+
+[merge]
+    tool = vimdiff
+    conflictStyle = diff3
+
+[mergetool]
+    keepBackup = false
+    keepTemporaries = false
+    prompt = false
+
+[push]
+    default = upstream
+[branch]
+    autosetuprebase = always
+
+[rerere]
+    # If, like me, you like rerere, decomment these
+    # autoupdate = true
+    # enabled = true
+
+[status]
+    submoduleSummary = true
+    showUntrackedFiles = all
+
+[http]
+    postBuffer = 524288000

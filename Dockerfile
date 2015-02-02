@@ -18,5 +18,5 @@ ADD dotfiles/vim          /root/.vim
 
 RUN mkdir -p ~/.vim/bundle
 RUN git clone git://github.com/Shougo/neobundle.vim.git root/.vim/bundle/neobundle.vim
-RUN vim +NeoBundleInstall! +q
+#RUN vim +NeoBundleInstall! +q
 

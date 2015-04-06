@@ -20,6 +20,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 """ My Bundles here:
 "
+" ASCII art pour les images
+NeoBundle 'ashisha/image.vim'
 " Informations sur le charactère (ga)
 NeoBundle 'tpope/vim-characterize'
 " Où sont définis les map (:Listmaps)
@@ -27,6 +29,10 @@ NeoBundle 'listmaps.vim'
 
 " Ajoute une goutiere avec les marques
 NeoBundle 'tomtom/quickfixsigns_vim'
+" diff amélioré
+NeoBundle 'chrisbra/vim-diff-enhanced'
+" En cas de mauvaise autocomplétion, propose un choix de fichier
+NeoBundle 'EinfachToll/DidYouMean'
 " Explorateur de fichier
 NeoBundle 'scrooloose/nerdtree'
 " Afficher la liste des buffers en bas de la fenêtre
@@ -39,8 +45,6 @@ NeoBundle 'mbbill/undotree'
 NeoBundle 'zhaocai/GoldenView.Vim'
 " Affiche les niveau d'indentation
 NeoBundle 'nathanaelkane/vim-indent-guides'
-" Même interaction avec la ligne de commande qu'avec bash
-NeoBundle 'houtsnip/vim-emacscommandline'
 " Incrémente, décrémente date heure etc
 NeoBundle 'tpope/vim-speeddating'
 " t/f multiligne
@@ -64,7 +68,7 @@ NeoBundle 'tmhedberg/matchit'
 " « . » répète les plugins
 NeoBundle 'tpope/vim-repeat'
 " Auto completion pour '"({...
-NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'jiangmiao/auto-pairs'
 " Dans quelle parenthèse se trouve t'on
 NeoBundle 'arnar/vim-matchopen'
 " sur un tag html, cherche la balise associée
@@ -89,6 +93,14 @@ NeoBundle 'tyru/current-func-info.vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'techlivezheng/tagbar-phpctags'
 NeoBundle 'techlivezheng/phpctags'
+" highlight variables
+NeoBundle 'jaxbot/semantic-highlight.vim'
+" met en valeur les scopes
+NeoBundle 'bigfish/vim-js-context-coloring', {
+\ 'build' : {
+\     'unix' : 'npm install --update',
+\    },
+\ }
 " Support pour CSS3, HTMl5, ES6, DOM...
 NeoBundle 'mozfr/mozilla.vim'
 " syntax js pour le DOM, Ajax...
@@ -105,6 +117,8 @@ NeoBundle 'captbaritone/better-indent-support-for-php-with-html'
 NeoBundle 'evidens/vim-twig'
 " Support less
 NeoBundle 'groenewege/vim-less'
+" Couleur CSS
+NeoBundle 'ap/vim-css-color'
 " Snippet
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
@@ -181,6 +195,9 @@ set whichwrap=<,>,[,],b,s,~
 
 " Y agit comme les autres capital
 nnoremap Y y$
+
+" q: est très souvent une typo
+nnoremap q: :q
 
 " Déplacement d'une ligne à l'écran à l'autre avec les flèche haut et bas
 nnoremap <silent> <UP>   gk
@@ -604,6 +621,9 @@ command! -bar -nargs=* Stabedit call ScratchEdit('tabe',   <q-args>)
 " Option spécifique pour les plugins "
 """"""""""""""""""""""""""""""""""""""
 
+" Goldenview
+let g:goldenview__enable_default_mapping=0
+
 " NERDTree
 nnoremap <silent> <F10> :NERDTreeToggle<CR>
 
@@ -613,8 +633,16 @@ nnoremap <silent> <S-F10> :BuffergatorToggle<CR>
 " undotree
 nnoremap <silent> <F9> :UndotreeToggle<CR>
 
+" semantic highlight
+nnoremap <silent> <F8> :SemanticHighlightToggle<CR>
+
+"js context coloring
+nnoremap <silent> <F7> :JSContextColorToggle<CR>
+let g:js_context_colors_usemaps=0
+let g:js_context_colors_enabled=0
+
 " tagbar
-nnoremap <silent> <F8> :TagbarToggle<CR>
+nnoremap <silent> <S-F8> :TagbarToggle<CR>
 let g:tagbar_phpctags_bin='/home/etienne/.vim/bundle/phpctags/phpctags'
 
 " Syntastic

@@ -4,7 +4,7 @@ MAINTAINER Tienslebien <etienne@crombez.info>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install -y vim zsh git gawk most less
+RUN apt-get update && apt-get install -y vim-nox zsh git gawk most less
 
 # Install oh-my-zsh
 RUN git clone git://github.com/robbyrussell/oh-my-zsh.git /root/.oh-my-zsh

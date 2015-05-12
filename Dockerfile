@@ -19,3 +19,5 @@ ADD dotfiles/vim          /root/.vim
 RUN mkdir -p ~/.vim/bundle &&\
     git clone git://github.com/Shougo/neobundle.vim.git root/.vim/bundle/neobundle.vim &&\
     cd ~/.vim/bundle/neobundle.vim/bin && ./neoinstall
+
+ENTRYPOINT /bin/zsh

@@ -32,9 +32,9 @@ NeoBundle 'bling/vim-airline'
 " ASCII art pour les images
 NeoBundle 'ashisha/image.vim'
 " Informations sur le charactère (ga)
-NeoBundle 'tpope/vim-characterize'
+"NeoBundle 'tpope/vim-characterize'
 " Où sont définis les map (:Listmaps)
-NeoBundle 'listmaps.vim'
+"NeoBundle 'listmaps.vim'
 
 " Ajoute une goutiere avec les marques
 NeoBundle 'tomtom/quickfixsigns_vim'
@@ -46,8 +46,6 @@ NeoBundle 'EinfachToll/DidYouMean'
 NeoBundle 'mbbill/undotree'
 " Redimentionne lors du changement de fenêtre
 NeoBundle 'zhaocai/GoldenView.Vim'
-" Affiche les niveau d'indentation
-NeoBundle 'nathanaelkane/vim-indent-guides'
 " Incrémente, décrémente date heure etc
 NeoBundle 'tpope/vim-speeddating'
 " t/f multiligne
@@ -62,8 +60,6 @@ NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'vasconcelloslf/vim-interestingwords'
 " * sur la selection
 NeoBundle 'nelstrom/vim-visual-star-search'
-" Élargis la selection incrémentalement
-NeoBundle 'terryma/vim-expand-region'
 " facilite la recherche, la substitution et les abbréviations
 NeoBundle 'tpope/vim-abolish'
 " % évolué
@@ -86,14 +82,8 @@ NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-operator-replace'
 " Plus belle indentation
 NeoBundle 'godlygeek/tabular'
-" Comment region of code
-NeoBundle 'tpope/vim-commentary'
 " syntax checking
 NeoBundle 'scrooloose/syntastic'
-" fenêtre des tags
-NeoBundle 'majutsushi/tagbar'
-" highlight variables
-NeoBundle 'jaxbot/semantic-highlight.vim'
 " met en valeur les scopes
 NeoBundle 'bigfish/vim-js-context-coloring', {
 \ 'build' : {
@@ -110,13 +100,11 @@ NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'groenewege/vim-less'
 " Couleur CSS
 NeoBundle 'ap/vim-css-color'
-" Snippet
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-" Complétion avec <tab>
-NeoBundle 'ervandew/supertab'
 " Dockerfile syntax
 NeoBundle 'ekalinin/Dockerfile.vim'
+" Snippets
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 
 " Permet d'écrire des tableau
 NeoBundle 'dhruvasagar/vim-table-mode'
@@ -618,16 +606,10 @@ let g:goldenview__enable_default_mapping=0
 " undotree
 nnoremap <silent> <F9> :UndotreeToggle<CR>
 
-" semantic highlight
-nnoremap <silent> <F8> :SemanticHighlightToggle<CR>
-
 "js context coloring
 nnoremap <silent> <F7> :JSContextColorToggle<CR>
 let g:js_context_colors_usemaps=0
 let g:js_context_colors_enabled=0
-
-" tagbar
-nnoremap <silent> <S-F8> :TagbarToggle<CR>
 
 " Syntastic
 let g:syntastic_javascript_checkers=['jshint']
@@ -635,21 +617,11 @@ let g:syntastic_javascript_checkers=['jshint']
 " vim-operator-replace
 map <Leader>s  <Plug>(operator-replace)
 
-" vim-expand-region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
 " Tabularize
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
-
-" vim indent guide
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=DarkGrey
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=Black
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -670,8 +642,6 @@ nnoremap <space>s :Unite -quick-match buffer<cr>
 " vim airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#tagbar#flags = 's'
 
 " Propose d'installer les bundles non installés
 NeoBundleCheck

@@ -17,6 +17,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Plugin manager
 NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'linux' : 'make',
+\     },
+\ }
 
 """ My Bundles here:
 "
@@ -33,12 +39,8 @@ NeoBundle 'tomtom/quickfixsigns_vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 " En cas de mauvaise autocomplétion, propose un choix de fichier
 NeoBundle 'EinfachToll/DidYouMean'
-" Explorateur de fichier
-NeoBundle 'scrooloose/nerdtree'
 " Afficher la liste des buffers en bas de la fenêtre
 NeoBundle 'buftabs'
-" Ouvre une fenêtre avec la liste des buffers
-NeoBundle 'jeetsukumaran/vim-buffergator'
 " visualisation du undotre
 NeoBundle 'mbbill/undotree'
 " Redimentionne lors du changement de fenêtre
@@ -614,12 +616,6 @@ command! -bar -nargs=* Stabedit call ScratchEdit('tabe',   <q-args>)
 " Goldenview
 let g:goldenview__enable_default_mapping=0
 
-" NERDTree
-nnoremap <silent> <F10> :NERDTreeToggle<CR>
-
-" BufferGator
-nnoremap <silent> <S-F10> :BuffergatorToggle<CR>
-
 " undotree
 nnoremap <silent> <F9> :UndotreeToggle<CR>
 
@@ -660,6 +656,17 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=Black
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" unite
+" Ctrl-p equivalent
+nnoremap <C-p> :Unite file_rec/async<cr>
+" vim-grep
+nnoremap <leader>/ :Unite grep:.<cr>
+" yank history
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>y :Unite history/yank<cr>
+" buffer switching
+nnoremap <space>s :Unite -quick-match buffer<cr>
 
 " Propose d'installer les bundles non installés
 NeoBundleCheck

@@ -24,6 +24,9 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     },
 \ }
 
+" great statusline
+NeoBundle 'bling/vim-airline'
+
 """ My Bundles here:
 "
 " ASCII art pour les images
@@ -39,8 +42,6 @@ NeoBundle 'tomtom/quickfixsigns_vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 " En cas de mauvaise autocomplétion, propose un choix de fichier
 NeoBundle 'EinfachToll/DidYouMean'
-" Afficher la liste des buffers en bas de la fenêtre
-NeoBundle 'buftabs'
 " visualisation du undotre
 NeoBundle 'mbbill/undotree'
 " Redimentionne lors du changement de fenêtre
@@ -89,8 +90,6 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-commentary'
 " syntax checking
 NeoBundle 'scrooloose/syntastic'
-" Affiche le nom de la fonction courante
-NeoBundle 'tyru/current-func-info.vim'
 " fenêtre des tags
 NeoBundle 'majutsushi/tagbar'
 " highlight variables
@@ -260,7 +259,7 @@ set cmdheight=1
 set laststatus=2
 
 " Contenu de la barre de statut
-set statusline=%<%y%f%h%r%m\ Buf:\ #%n\ %{cfi#format(\"[%s()]\",\ \"[no\ function]\")}%=Line:\ %l/%L[%P]\ Col:\ %c
+set statusline=%<%y%f%h%r%m\ Buf:\ #%n%=Line:\ %l/%L[%P]\ Col:\ %c
 
 " Garde toujours une ligne visible à l'écran au dessus du curseur
 set scrolloff=1
@@ -667,6 +666,12 @@ let g:unite_source_history_yank_enable = 1
 nnoremap <leader>y :Unite history/yank<cr>
 " buffer switching
 nnoremap <space>s :Unite -quick-match buffer<cr>
+
+" vim airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#flags = 's'
 
 " Propose d'installer les bundles non installés
 NeoBundleCheck

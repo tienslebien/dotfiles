@@ -91,8 +91,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tyru/current-func-info.vim'
 " fenêtre des tags
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'techlivezheng/tagbar-phpctags'
-NeoBundle 'techlivezheng/phpctags'
 " highlight variables
 NeoBundle 'jaxbot/semantic-highlight.vim'
 " met en valeur les scopes
@@ -107,14 +105,6 @@ NeoBundle 'mozfr/mozilla.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
 " syntax js pour des lib usuelles (jQuery, angularJS...)
 NeoBundle 'othree/javascript-libraries-syntax.vim'
-" Meilleur complétion et indentation pour PHP
-NeoBundle 'shawncplus/phpcomplete.vim'
-NeoBundle '2072/PHP-Indenting-for-VIm'
-NeoBundle 'php.vim'
-NeoBundle 'captbaritone/better-indent-support-for-php-with-html'
-"Bundle 'phpfolding.vim'
-" Support twig
-NeoBundle 'evidens/vim-twig'
 " Support less
 NeoBundle 'groenewege/vim-less'
 " Couleur CSS
@@ -643,10 +633,8 @@ let g:js_context_colors_enabled=0
 
 " tagbar
 nnoremap <silent> <S-F8> :TagbarToggle<CR>
-let g:tagbar_phpctags_bin='/home/etienne/.vim/bundle/phpctags/phpctags'
 
 " Syntastic
-let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd', 'phpcpd']
 let g:syntastic_javascript_checkers=['jshint']
 
 " vim-operator-replace

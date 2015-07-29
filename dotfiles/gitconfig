@@ -6,6 +6,7 @@
     ui = auto
 
 [alias]
+    rd = rm -r
     co = checkout
     ci = commit
     st = status

@@ -97,6 +97,8 @@ NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'pangloss/vim-javascript'
 " syntax js pour des lib usuelles (jQuery, angularJS...)
 NeoBundle 'othree/javascript-libraries-syntax.vim'
+" syntax coffee script
+NeoBundle 'kchmck/vim-coffee-script'
 " Support less
 NeoBundle 'groenewege/vim-less'
 " Couleur CSS

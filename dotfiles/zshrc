@@ -10,7 +10,11 @@ ZSH_THEME="my"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Comment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -41,17 +45,17 @@ DISABLE_AUTO_UPDATE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Gitfast plugin configuration
-GIT_PS1_SHOWDIRTYSTATE="true"
-GIT_PS1_SHOWSTASHSTATE="true"
-GIT_PS1_SHOWUNTRACKEDFILES="true"
-GIT_PS1_SHOWCOLORHINTS="true"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(npm bower composer debian sudo symfony symfony2 git gitfast zsh-syntax-highlighting history-substring-search docker)
+
+# Gitfast plugin configuration
+GIT_PS1_SHOWDIRTYSTATE="true"
+GIT_PS1_SHOWSTASHSTATE="true"
+GIT_PS1_SHOWUNTRACKEDFILES="true"
+GIT_PS1_SHOWCOLORHINTS="true"
 
 source $ZSH/oh-my-zsh.sh
 

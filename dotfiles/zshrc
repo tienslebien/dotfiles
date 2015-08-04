@@ -57,8 +57,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Alias
-alias rd='rm -r';
+# Alias ls
 alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable --dereference-command-line-symlink-to-dir --group-directories-first';
 alias la='ls -A';
 
@@ -66,21 +65,24 @@ alias sl='sl -ae';
 alias l="sl -l";
 alias xs='sl -F';
 
-export pager='most'
-
-export CDPATH='/home/etienne/workspace'
-
 # Alias git
 alias gp='git push origin $(git rev-parse --abbrev-ref HEAD)';
 alias gg='git pull --rebase --stat origin $(git rev-parse --abbrev-ref HEAD)';
 alias gs='git status';
 alias ga='git add -A';
-alias ga.='git add -A .';
 alias gc='git commit';
 alias gca='git commit -a';
 alias gd='git d';
 alias gl='git hist';
 alias glg='git lg';
+
+# Autres alias
+alias rd='rm -r';
+alias vio='vim -O';
+
+# Variables
+export pager='most';
+export CDPATH='/home/etienne/workspace';
 
 
 #export PATH=$HOME/bin:/usr/local/bin:$PATH

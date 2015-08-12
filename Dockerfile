@@ -4,20 +4,20 @@ MAINTAINER Tienslebien <etienne@crombez.info>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install -y vim-nox zsh git gawk most less
+RUN apt-get update && apt-get install -y vim-nox zsh git most
 
 # Install oh-my-zsh
-RUN git clone git://github.com/robbyrussell/oh-my-zsh.git /root/.oh-my-zsh &&\
-    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh &&\
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-ADD dotfiles/zshrc        /root/.zshrc
-ADD dotfiles/my.zsh-theme /root/.oh-my-zsh/custom/my.zsh-theme
-ADD dotfiles/gitconfig    /root/.gitconfig
-ADD dotfiles/vimrc        /root/.vimrc
-ADD dotfiles/vim          /root/.vim
+ADD dotfiles/zshrc        ~/.zshrc
+ADD dotfiles/my.zsh-theme ~/.oh-my-zsh/custom/my.zsh-theme
+ADD dotfiles/gitconfig    ~/.gitconfig
+ADD dotfiles/vimrc        ~/.vimrc
+ADD dotfiles/vim          ~/.vim
 
 RUN mkdir -p ~/.vim/bundle &&\
-    git clone git://github.com/Shougo/neobundle.vim.git root/.vim/bundle/neobundle.vim &&\
-    cd ~/.vim/bundle/neobundle.vim/bin && ./neoinstall
+    git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim &&\
+    ~/.vim/bundle/neobundle.vim/bin/neoinstall
 
 ENTRYPOINT /bin/zsh

@@ -26,6 +26,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 
 " great statusline
 NeoBundle 'bling/vim-airline'
+" Colorscheme
+NeoBundle 'romainl/Apprentice'
 
 """ My Bundles here:
 "
@@ -373,7 +375,7 @@ syntax enable
 " Les jeux de couleur disponibles sont les fichiers avec l'extension .vim
 " dans le répertoire /usr/share/vim/vimcurrent/colors/
 set background=dark
-colorscheme delek
+colorscheme apprentice
 
 " Affiche la paire de parenthèses
 set showmatch

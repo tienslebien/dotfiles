@@ -28,6 +28,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'bling/vim-airline'
 " Colorscheme
 NeoBundle 'romainl/Apprentice'
+NeoBundle 'zenorocha/dracula-theme', {'rtp': 'vim'}
 
 """ My Bundles here:
 "
@@ -376,6 +377,7 @@ syntax enable
 " dans le répertoire /usr/share/vim/vimcurrent/colors/
 set background=dark
 colorscheme apprentice
+colorscheme dracula
 
 " Affiche la paire de parenthèses
 set showmatch

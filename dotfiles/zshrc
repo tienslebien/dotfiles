@@ -49,7 +49,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(npm bower composer debian sudo git gitfast zsh-syntax-highlighting history-substring-search docker)
+plugins=(npm bower debian sudo git gitfast zsh-syntax-highlighting history-substring-search docker tmux tmuxinator copydir copyfile)
 
 # Gitfast plugin configuration
 GIT_PS1_SHOWDIRTYSTATE="true"

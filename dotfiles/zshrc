@@ -85,7 +85,7 @@ alias rd='rm -r';
 alias vio='vim -O';
 
 # Variables
-export pager='most';
+export EDITOR='vim';
 export CDPATH='/home/etienne/workspace';
 
 

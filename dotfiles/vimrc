@@ -69,8 +69,6 @@ NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tmhedberg/matchit'
 " « . » répète les plugins
 NeoBundle 'tpope/vim-repeat'
-" Auto completion pour '"({...
-NeoBundle 'jiangmiao/auto-pairs'
 " Dans quelle parenthèse se trouve t'on
 NeoBundle 'arnar/vim-matchopen'
 " sur un tag html, cherche la balise associée
@@ -83,6 +81,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'kana/vim-operator-user'
 " Remplace un objet texte par un autre
 NeoBundle 'kana/vim-operator-replace'
+" Flash le code copié
+NeoBundle 'haya14busa/vim-operator-flashy'
 " Plus belle indentation
 NeoBundle 'godlygeek/tabular'
 " syntax checking
@@ -624,6 +624,10 @@ let g:syntastic_check_on_open=0
 
 " vim-operator-replace
 map <Leader>s  <Plug>(operator-replace)
+
+" vim-operator-flashy
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
 
 " Tabularize
 nmap <Leader>a= :Tabularize /=<CR>

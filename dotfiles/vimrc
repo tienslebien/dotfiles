@@ -95,6 +95,10 @@ NeoBundle 'bigfish/vim-js-context-coloring', {
 \ }
 " Support pour CSS3, HTMl5, ES6, DOM...
 NeoBundle 'mozfr/mozilla.vim'
+" Support pour JSON
+NeoBundle 'elzr/vim-json'
+" Support pour JSX
+NeoBundle 'mxw/vim-jsx'
 " syntax js pour le DOM, Ajax...
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'gavocanov/vim-js-indent'

@@ -32,8 +32,6 @@ NeoBundle 'zenorocha/dracula-theme', {'rtp': 'vim'}
 
 """ My Bundles here:
 "
-" ASCII art pour les images
-NeoBundle 'ashisha/image.vim'
 " Informations sur le charactère (ga)
 "NeoBundle 'tpope/vim-characterize'
 " Où sont définis les map (:Listmaps)

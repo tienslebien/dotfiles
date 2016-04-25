@@ -111,3 +111,8 @@ export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# JC Decaux
+export http_proxy=http://crombez:Safaa421@pla121lx048.fr.jcdecaux.org:8000/
+export https_proxy=http://crombez:Safaa421@pla121lx048.fr.jcdecaux.org:8000/
+export no_proxy=localhost,*.jcdecaux.com,*.jcdecaux.org

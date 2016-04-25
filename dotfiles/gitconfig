@@ -1,6 +1,6 @@
 [user]
-    name = tienslebien
-    email = etienne@crombez.info
+    name = Etienne Crombez
+    email = etienne.crombez@jcdecaux.com
 
 [color]
     ui = auto
@@ -70,3 +70,14 @@
 
 [http]
     postBuffer = 524288000
+
+[http]
+    proxy = http://crombez:Safaa421@pla121lx048.fr.jcdecaux.org:8000
+[https]
+    proxy = http://crombez:Safaa421@pla121lx048.fr.jcdecaux.org:8000
+[http "http://git.jcdecaux.com/"]
+    proxy =
+[http "http://gitfr.jcdecaux.com/"]
+    proxy =
+[url "http://"]
+    insteadOf = git://

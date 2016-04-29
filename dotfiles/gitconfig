@@ -51,10 +51,13 @@
     prompt = false
 
 [push]
-    default = upstream
+    default = simple
 
 [branch]
     autosetuprebase = always
+
+[pull]
+    rebase=true
 
 [rerere]
     # If, like me, you like rerere, decomment these

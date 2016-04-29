@@ -85,6 +85,8 @@ NeoBundle 'haya14busa/vim-operator-flashy'
 NeoBundle 'godlygeek/tabular'
 " syntax checking
 NeoBundle 'scrooloose/syntastic'
+" syntax checking for js
+NeoBundle 'mtscout6/syntastic-local-eslint.vim'
 " met en valeur les scopes
 NeoBundle 'bigfish/vim-js-context-coloring', {
 \ 'build' : {

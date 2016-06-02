@@ -1,6 +1,7 @@
 [user]
-    name = tienslebien
-    email = etienne@crombez.info
+    name = tienslebienz
+    email = etienne.crombez@zenika.com
+	signingkey = D9B5B0C56BD131CF
 
 [color]
     ui = auto
@@ -70,3 +71,5 @@
 
 [http]
     postBuffer = 524288000
+[commit]
+	gpgsign = true

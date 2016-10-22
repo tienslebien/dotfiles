@@ -35,8 +35,6 @@ call dein#add('dracula/vim')
 
 " Ajoute une goutiere avec les marques
 call dein#add('tomtom/quickfixsigns_vim')
-" diff amélioré
-call dein#add('chrisbra/vim-diff-enhanced')
 " En cas de mauvaise autocomplétion, propose un choix de fichier
 call dein#add('EinfachToll/DidYouMean')
 " visualisation du undotre

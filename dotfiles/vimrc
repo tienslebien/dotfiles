@@ -78,9 +78,9 @@ call dein#add('haya14busa/vim-operator-flashy')
 " Plus belle indentation
 call dein#add('godlygeek/tabular')
 " syntax checking
-call dein#add('scrooloose/syntastic')
+call dein#add('neomake/neomake')
 " syntax checking for js
-call dein#add('mtscout6/syntastic-local-eslint.vim')
+call dein#add('benjie/neomake-local-eslint.vim')
 " met en valeur les scopes
 call dein#add('bigfish/vim-js-context-coloring', { 'build' : 'npm install --update' })
 " Support pour JSON
@@ -107,6 +107,10 @@ call dein#add('ekalinin/Dockerfile.vim')
 " Snippets
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
+" Ajoute les caractères fermant automatiquement
+call dein#add('jiangmiao/auto-pairs')
+" Autocompletion
+call dein#add('Shougo/deoplete.nvim')
 
 " Permet d'écrire des tableau
 call dein#add('dhruvasagar/vim-table-mode')
@@ -614,12 +618,13 @@ nnoremap <silent> <F7> :JSContextColorToggle<CR>
 let g:js_context_colors_usemaps=0
 let g:js_context_colors_enabled=0
 
-" Syntastic
-let g:syntastic_check_on_open=0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_loc_list_height = 5
+" Neomake
+autocmd! BufWritePost,BufEnter * Neomake
+nmap <Leader><Space>o :lopen<CR>      " open location window
+nmap <Leader><Space>c :lclose<CR>     " close location window
+nmap <Leader><Space>, :ll<CR>         " go to current error/warning
+nmap <Leader><Space>n :lnext<CR>      " next error/warning
+nmap <Leader><Space>p :lprev<CR>      " previous error/warning
 
 " vim-operator-replace
 map <Leader>s  <Plug>(operator-replace)
@@ -634,21 +639,13 @@ vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
-" ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" unite
-" Ctrl-p equivalent
-nnoremap <C-p> :Unite file_rec/async<cr>
-" vim-grep
-nnoremap <leader>/ :Unite grep:.<cr>
-" yank history
-let g:unite_source_history_yank_enable = 1
-nnoremap <leader>y :Unite history/yank<cr>
-" buffer switching
-nnoremap <leader>b :Unite -quick-match buffer<cr>
+" deoplete + neosnippet + autopairs
+let g:AutoPairsMapCR=0
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 
 " vim airline
 let g:airline_powerline_fonts = 1

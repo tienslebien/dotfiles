@@ -39,8 +39,6 @@ call dein#add('tomtom/quickfixsigns_vim')
 call dein#add('EinfachToll/DidYouMean')
 " visualisation du undotre
 call dein#add('mbbill/undotree')
-" Redimentionne lors du changement de fenêtre
-call dein#add('zhaocai/GoldenView.Vim')
 " Incrémente, décrémente date heure etc
 call dein#add('tpope/vim-speeddating')
 " t/f multiligne
@@ -69,20 +67,22 @@ call dein#add('Valloric/MatchTagAlways')
 call dein#add('tudorprodan/html_annoyance.vim')
 " Manipulation des caractères entourant qqch
 call dein#add('tpope/vim-surround')
+" Permet de définir un text object (lib)
+call dein#add('kana/vim-textobj-user')
+" text object pour les attribut XML
+call dein#add('whatyouhide/vim-textobj-xmlattr')
 " Permet de définir un opérateur (lib)
 call dein#add('kana/vim-operator-user')
 " Remplace un objet texte par un autre
 call dein#add('kana/vim-operator-replace')
 " Flash le code copié
 call dein#add('haya14busa/vim-operator-flashy')
-" Plus belle indentation
-call dein#add('godlygeek/tabular')
 " syntax checking
 call dein#add('neomake/neomake')
 " syntax checking for js
 call dein#add('benjie/neomake-local-eslint.vim')
 " met en valeur les scopes
-call dein#add('bigfish/vim-js-context-coloring', { 'build' : 'npm install --update' })
+call dein#add('bigfish/vim-js-context-coloring', { 'build': 'npm install --update' })
 " Support pour JSON
 call dein#add('elzr/vim-json')
 " Support pour JSX
@@ -116,7 +116,7 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('dhruvasagar/vim-table-mode')
 
 " Lien vers jsfiddle
-call dein#add('mohitleo9/vim-fidget', { 'build' : 'npm install' })
+call dein#add('mohitleo9/vim-fidget', { 'build': 'npm install --update' })
 
 " hard mode, pour un perfectionnement de vim
 call dein#add('wikitopian/hardmode')
@@ -201,6 +201,9 @@ let mapleader="\<SPACE>"
 "    set clipboard+=unnamedplus
 "  endif
 "endif
+
+" Pas de souris
+set mouse=
 
 " coller depuis le système
 nnoremap <F8> :set paste<CR>i
@@ -607,9 +610,6 @@ command! -bar -nargs=* Stabedit call ScratchEdit('tabe',   <q-args>)
 " Option spécifique pour les plugins "
 """"""""""""""""""""""""""""""""""""""
 
-" Goldenview
-let g:goldenview__enable_default_mapping=0
-
 " undotree
 nnoremap <silent> <F9> :UndotreeToggle<CR>
 
@@ -632,12 +632,6 @@ map <Leader>s  <Plug>(operator-replace)
 " vim-operator-flashy
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
-
-" Tabularize
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " deoplete + neosnippet + autopairs
 let g:AutoPairsMapCR=0

@@ -155,7 +155,7 @@ set switchbuf=useopen
 set history=500
 
 " Options du fichier ~/.viminfo
-set viminfo=!,'100,<100,s100,:0,/100,h,
+"set viminfo=!,'100,<100,s100,:0,/100,h,
 
 " undo
 set undofile
@@ -193,14 +193,6 @@ set iskeyword+=_,$,@,%,#,-
 
 " Définition de la leaderkey
 let mapleader="\<SPACE>"
-
-" Copie dans le presse papier système
-"if has('clipboard')
-"  set clipboard=unnamed
-"  if has('unnamedplus')
-"    set clipboard+=unnamedplus
-"  endif
-"endif
 
 " Pas de souris
 set mouse=
@@ -266,7 +258,7 @@ set winminheight=0
 set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold:.,diff:⣿
 
 " Plus de couleur et un titre dans un terminal graphique
-if &term == "xterm" || &term == "screen-bce"
+if &term == "xterm" || &term == "screen-bce" || &term == "nvim"
   if !has('nvim')
     set t_Co=256
   endif

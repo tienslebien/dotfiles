@@ -57,7 +57,7 @@
     autosetuprebase = always
 
 [pull]
-    rebase=true
+    rebase = true
 
 [rerere]
     # If, like me, you like rerere, decomment these

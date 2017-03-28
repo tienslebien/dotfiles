@@ -21,7 +21,8 @@ call dein#add('Shougo/dein.vim')
 
 
 " great statusline
-call dein#add('bling/vim-airline')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
 " Colorscheme
 call dein#add('romainl/Apprentice')
 call dein#add('dracula/vim')
@@ -62,6 +63,13 @@ call dein#add('tpope/vim-repeat')
 " Dans quelle parenthèse se trouve t'on
 call dein#add('arnar/vim-matchopen')
 " sur un tag html, cherche la balise associée
+" Snippets
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+" Ajoute les caractères fermant automatiquement
+call dein#add('jiangmiao/auto-pairs')
+" Autocompletion
+call dein#add('Shougo/deoplete.nvim')
 call dein#add('Valloric/MatchTagAlways')
 " pour le tag <a>, ne souligne que le texte
 call dein#add('tudorprodan/html_annoyance.vim')
@@ -104,13 +112,6 @@ call dein#add('groenewege/vim-less')
 call dein#add('ap/vim-css-color')
 " Dockerfile syntax
 call dein#add('ekalinin/Dockerfile.vim')
-" Snippets
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
-" Ajoute les caractères fermant automatiquement
-call dein#add('jiangmiao/auto-pairs')
-" Autocompletion
-call dein#add('Shougo/deoplete.nvim')
 
 " Permet d'écrire des tableau
 call dein#add('dhruvasagar/vim-table-mode')

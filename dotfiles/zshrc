@@ -77,9 +77,11 @@ alias gp='git push origin $(git rev-parse --abbrev-ref HEAD)';
 alias gg='git pull --rebase --stat origin $(git rev-parse --abbrev-ref HEAD)';
 alias gs='git status';
 alias ga='git add -A';
+alias gap='git add -A -p';
 alias gc='git commit';
 alias gca='git commit -a';
 alias gd='git d';
+alias gdc='git d --cached';
 alias gl='git hist';
 alias glg='git lg';
 

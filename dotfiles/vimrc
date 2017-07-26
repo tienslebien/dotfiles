@@ -120,8 +120,8 @@ call dein#add('ekalinin/Dockerfile.vim')
 " Permet d'écrire des tableau
 call dein#add('dhruvasagar/vim-table-mode')
 
-" Lien vers jsfiddle
-call dein#add('mohitleo9/vim-fidget', { 'build': 'npm install --update' })
+" Navigation entre buffers
+call dein#add('bsdelf/bufferhint')
 
 " hard mode, pour un perfectionnement de vim
 call dein#add('wikitopian/hardmode')
@@ -171,6 +171,9 @@ set swapfile
 if !has('nvim')
   set swapsync="fsync"
 endif
+
+" backup copy
+set backupcopy=yes
 
 " Active la touche Backspace
 set backspace=start,indent,eol
@@ -646,6 +649,10 @@ let g:airline#extensions#tabline#enabled = 1
 " TypeScript
 autocmd FileType typescript JsPreTmpl html
 autocmd FileType typescript syn clear foldBraces
+
+" bufferhint
+nnoremap - :call bufferhint#Popup()<CR>
+nnoremap \ :call bufferhint#LoadPrevious()<CR>
 
 " Propose d'installer les bundles non installés
 if dein#check_install()

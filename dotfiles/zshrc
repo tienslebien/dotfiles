@@ -120,3 +120,7 @@ export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+export LANGUAGE="fr_FR.UTF-8"
+export LC_ALL="fr_FR.UTF-8"
+export LC_CTYPE="fr_FR.UTF-8"
+export LANG="fr_FR.UTF-8"

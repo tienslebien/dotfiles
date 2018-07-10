@@ -58,7 +58,20 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(npm yarn bower ng debian sudo git gitfast zsh-syntax-highlighting history-substring-search docker zsh-autosuggestions)
+plugins=(
+  npm
+  yarn
+  ng
+  debian
+  sudo
+  docker
+  docker-compose
+  git
+  gitfast
+  zsh-syntax-highlighting
+  history-substring-search
+  zsh-autosuggestions
+)
 
 # Gitfast plugin configuration
 GIT_PS1_SHOWDIRTYSTATE="true"
@@ -70,6 +83,42 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH=$HOME/bin:$HOME/.npm/_global/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+export LANGUAGE="fr_FR.UTF-8"
+export LC_ALL="fr_FR.UTF-8"
+export LC_CTYPE="fr_FR.UTF-8"
+export LANG="fr_FR.UTF-8"
+
+export EDITOR='vim';
+export CDPATH='/home/etienne/workspace';
+export CHROME_BIN='/usr/bin/chromium-browser';
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 # Alias ls
 alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable --dereference-command-line-symlink-to-dir --group-directories-first';
 alias la='ls -A';
@@ -80,6 +129,7 @@ alias l="sl -l";
 alias xs='sl -F';
 
 # Alias git
+alias gf='git fetch --prune --all';
 alias gp='git push origin $(git rev-parse --abbrev-ref HEAD)';
 alias gg='git pull --rebase --stat origin $(git rev-parse --abbrev-ref HEAD)';
 alias gs='git status';
@@ -96,31 +146,3 @@ alias glg='git lg';
 alias df="df --human-readable";
 alias rd='rm -r';
 alias vio='vim -O';
-
-# Variables
-export EDITOR='vim';
-export CDPATH='/home/etienne/workspace';
-
-
-export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-export LANGUAGE="fr_FR.UTF-8"
-export LC_ALL="fr_FR.UTF-8"
-export LC_CTYPE="fr_FR.UTF-8"
-export LANG="fr_FR.UTF-8"

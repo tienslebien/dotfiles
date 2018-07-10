@@ -367,6 +367,11 @@ function! SearchListToggle()
 endfunction
 nnoremap <silent> <S-F12> :call SearchListToggle()<CR>
 
+" substitution en direct
+if has("nvim")
+    set inccommand=nosplit
+endif
+
 
 """""""""""""""""
 " Programmation "

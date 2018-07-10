@@ -95,6 +95,8 @@ call dein#add('bigfish/vim-js-context-coloring', { 'build': 'npm install --updat
 call dein#add('elzr/vim-json')
 " Support pour JSX
 call dein#add('mxw/vim-jsx')
+" Support pour Vue
+call dein#add('posva/vim-vue')
 " Support pour typeScript
 call dein#add('leafgarland/typescript-vim')
 " syntax js pour le DOM, Ajax...

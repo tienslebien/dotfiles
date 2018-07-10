@@ -626,7 +626,8 @@ let g:js_context_colors_usemaps=0
 let g:js_context_colors_enabled=0
 
 " Neomake
-autocmd! BufWritePost,BufEnter * Neomake
+" When writing a buffer, and on normal mode changes (after 750ms).
+call neomake#configure#automake('nw', 750)
 nmap <Leader><Space>o :lopen<CR>      " open location window
 nmap <Leader><Space>c :lclose<CR>     " close location window
 nmap <Leader><Space>, :ll<CR>         " go to current error/warning

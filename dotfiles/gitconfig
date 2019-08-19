@@ -1,6 +1,7 @@
 [user]
-    name = tienslebien
-    email = etienne@crombez.info
+    name = Etienne Crombez
+    email = etienne@wenabi.com
+	signingkey = F8D9923D78434EB7
 
 [color]
     ui = auto
@@ -70,3 +71,5 @@
 
 [http]
     postBuffer = 524288000
+[commit]
+	gpgsign = true
